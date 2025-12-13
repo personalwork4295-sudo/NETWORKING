@@ -1,0 +1,510 @@
+So the OSI model stands for Open Systems Interconnect. It's a model that was developed in the 70s in order to describe network operation. Now there's lots of different protocols involved in data networking, and what the OSI model did is it gave us a place to categorize each of these protocols, as well as give the exact order that those protocols need to be processed in. So if you remember this phone call I talked about in the previous module, the order of operations here were such that Leia had to vibrate the air, which vibrated the microphone, which converted it into electrical signals, which then got converted into wireless signals, which got converted into a different type of electrical signal, and so on, until that message reached Obi on the other side. Now, in order for that to happen, there is a very precise set of rules that need to happen and protocols that need to be followed in order for this conversation to successfully happen. Well, when we're working with data networking, it's almost exactly the same; we just have these different components involved versus our smartphones and our voice. We're going to be using a computer or a tablet or a smartphone, like maybe an internet browser on a smartphone, to do our communication. So let's introduce a drawing. Now I communicate a lot in these drawings with icons, so I'll introduce the drawings and all the icons we're using so that we can use that then to talk about the OSI model. So here we have a PC. This is our end‑user device. Sometimes this is called a client, sometimes it's called a workstation, PC. That's the device we're going to be using to surf the web. Now another device in our network, especially in our home network, is likely going to be this wireless router device. And this is the icon, the purple icon here is the icon that I'm using for a wireless router. And we can then connect our PC up to that wireless router. That router typically has some switchports on the back, so we can actually plug in a cable to that. Or we might be using it as a wireless device and actually not have any cables at all and just use the wireless communication to communicate between our workstation and the wireless access point. Now in order to get access to the internet, we need some type of device to bridge the network connection between our wireless access point and the internet, and that's where a modem comes in. So here is a modem. I showed you some real‑life pictures of this in the previous module. Here this teal icon is just a representation of that cable modem or any other type of modem that's going to connect you to the internet. So we're slowly building this network up. This is a representation of your home network. And then out on the internet, we have a bunch of servers out on the internet, and this icon is representing the servers, the orange icon there with the globe next to it. This is going to be the servers that contain all of the information that we are going to transfer from the server to our workstation so that we can read the news, surf Facebook or other social media, or maybe check our email. For the purposes of this, I'm going to avoid the wireless for this moment. We're going to come back and talk lots more about wireless in the future. But for now, I'm just going to connect my workstation to our network with a cable. So now we have this network, or this drawing of our basic network. Remember before I said that cloud represents a bunch of devices and protocols that we don't want to represent individually? And that's exactly what I'm doing here as well. That internet now is a cloud. It's thousands of devices that we're going to use to connect to our server to transfer information. So let's say that on my workstation I want to go to pluralsight.com. So I type that into my browser, and that's going to send a message to our Pluralsight server. The Pluralsight server is then going to grab the website that we're looking for, it's going to put that into a message, and then send it over to my workstation so that I can browse the videos on Pluralsight. So in order for that to happen, we need a very specific set of rules and orders of operations for this to happen. So if you start with the most basic things that we can see, we can see the cables that we're using. Now the cables don't have any special electronics in them, or at least most of them don't. They're typically just some wires with a special connector on the end so that we can plug them into things. But there's no special electronics in those devices. Those cables do follow protocols though. So the Ethernet cable that we use to connect our computer to our wireless access point there, or our switch, that cable follows a very precise set of rules on how it's constructed. It just doesn't have anything electronic in it. So all these cables that we have here are used to connect things together. There's even wireless cables. That might be our wireless connection in our home from our smartphone to the wireless access point. Or even out on the internet, there might be some connections that use a point‑to‑point wireless connection. These are also cables, in that they're used to transfer information, they follow a specific protocol, but it's not a device. It's actually the signal itself that we're talking about here. So in the case of the cables that connect our workstations together, these are called twisted pair cables. These twisted pair cables follow a very specific set of rules, which we'll learn about in a later module. Oftentimes connecting our server to the rest of the network we're going to use twisted pair cabling. Connecting our cable modem to the internet might use a coax cable. And then out on the internet here, we're likely going to be using fiber optics, or very thin strands of glass, in order to transfer our information. So all of these cables, these different cables, whether it be wireless, twisted pair, coax, fiber optics, all of these are technology that we use in order to transfer our data from one device to another. All of this stuff is happening at what we call the physical layer of the OSI model. The physical layer is also layer 1, and the physical layer is really what we're talking about when we're talking about cables, specifications for cables, whether that be wireless, copper, or glass. The next layer of the OSI model here is going to be used to have protocols that allow us to transfer bits of information over the cables. So there is a specific protocol called Ethernet that we use to transfer data from our workstation to the wireless router, from the wireless router to the cable modem, from the cable modem to wherever our internet provider is, from the server to our switches inside of our data center, and then numerous other protocols on the internet used to transfer information. So all these little circles that I have drawn here, those are representing different protocols that could be used to transfer data. And each one of these protocols is a little bit different, but they work together all at the same level. What I have circled here, the connection between my PC and the router, the router and the cable modem, and then the server and the rest of the internet, that's likely using Ethernet. The connection here between our cable modem and the rest of the internet is likely using a protocol called DOCSIS 3. Out on the internet it's mainly Ethernet, but there could be other protocols out there. All of these protocols, Ethernet, DOCSIS, are all part of the data link layer, and they provide all of the structure to be able to use the cables that are connected to it. So they provide the protocols and the rules, specifications for electronics, as well as how to create and move a message across those links. So that's layer 2 of our OSI model, is the data link layer. So the data link layer is facilitating communication within these circles that I have drawn on the screen. It's allowing us to pass data from one device to another. However, if I want to send a message to a device that's far away, that's not on my little local network, what I need to do is I need some other mechanism to do that. So I need another type of protocol in order to do this, so I might need to communicate between my PC and my cable modem, or I might need to communicate from the cable modem out to the internet someplace, or I might need to communicate, in this case, I will need to communicate, from my workstation all the way to Pluralsight servers and back again. So I need some way of sending a message from my workstation to Pluralsight and then getting it back, and this is where we use a protocol called Internet Protocol, and we use something called IP addressing. The IP addressing allows us as users to communicate with nearly any device on the internet. This is where IP addressing occurs, IP routing, and it is all the network layer, which is layer 3 of our OSI model. So far we have the physical layer, our cables, we have the data link layer, which are the protocols that allow our computer and other devices to communicate locally with other devices. Then we have layer 3, the network layer. That allows us to make use of the data link layer and physical layer to send messages long distances across a network. The next layer here we're going to talk about is, in order for us to have a conversation between our client, or workstation, and our server, where pluralsight.com's website is hosted, we need a way to build a session in between these two devices so that they can send information between each other and understand that the conversation is meant for specific things in that network communication. We're going to talk lots about this process. In fact, I have a whole other module that talks specifically about this process. But for now, let's go back to our cell phone example here, where we're making a phone call. Now we talked about kind of like the vibrating air and whatnot with this, but more so there's another way to look at this conversation. There's another protocol we follow, actually, in order to make this conversation work. I can't just pick up my smartphone and start talking and expect my friend Obi on the other end to listen. What I have to do is I have to dial a phone number for Obi, and then I have to wait for Obi's phone to ring. Once his phone is ringing, Obi can answer that phone, he's going to say hello, Leia here says hello, and once that happens then Leia can say, hey, I need some help. And Obi can say, oh, okay, and they can have that conversation. And my point here is that in order for Leia to be able to communicate with Obi, we have to go through that process of dialing the phone, waiting for it to ring, waiting for Obi to say hello, I say hello. And once that happens then I can send any information I want. Transmission Control Protocol does this in data networking. This is also called TCP, and what it does is it sets up a session between our workstation and the server so that we can send data between these two devices. This is the transport layer. So the transport layer in networking is responsible for setting up a session typically using TCP. It has a handshake process, and it builds a connection, and it uses the network layer to find where in the world those devices are. It uses the data link layer to communicate those messages from device to device to device to device until they reach their destinations, and that all happens on the physical layer, which is our wires and cables that connect our network together. Next, we need a way to transfer information that's in a usable format. One of those ways is to use a web browser and browse to a website like pluralsight.com and then retrieve a web page. The website is nothing more than a document with information in it. The web browser is an application that makes use of a protocol in order to request and transfer information. So in order to get the website to our workstation, we're going to make a request of the server to say, hey, send us the website. The server's going to respond with a document that is the website, and we're going to use a protocol called Hypertext Transfer Protocol. This is also known as HTTP, and it has a sibling called HTTPS, which is the encrypted version of it. Now, HTTP and HTTPS, they transfer documents that are written in a language called HyperText Markup Language, or HTML. So we're using HTTP to transfer HTML documents. So our website is written in some form of HTML, and we use HTTP or HTTPS to transfer those. So all of this is happening outside of our process of building a session between our two workstations or identifying the location of those devices with IP addresses or having protocols that allow us to transfer information from our computer to the router to the cable modem and so on. All this is happening at the application layer of the OSI model. Now the OSI model is seven layers, and you've noticed that I have skipped two of them. The OSI model was written in the 70s when they had different networking needs and other protocols involved here. So there's two layers that I have not talked about now, 5 and 6. So what's going on with that? Well, let's talk about it. First, let's talk about the presentation layer. The presentation layer is layer 6, and we don't really use the presentation layer anymore. And there's a reason for that. Back in the 70s, there were several types of systems. There were a lot of open source systems that universities used, and then IBM had systems as well, and IBM developed very proprietary protocols that were similar but different than the ones used in university settings. So let's say we have this message of "Don't Panic." Well, in order to create Don't Panic in a language that the computer understands and can encode, when we type on the keyboard, each one of these letters capital D, lowercase o, apostrophes, and whatnot, each of those is mapped to a hexadecimal value. It's a 8‑bit hexadecimal value, and it's called ASCII, A‑S‑C‑I‑I, which stands for American Standard Code for Information Interchange. ASCII is still used today. When we type on our keyboard, it is still translated to these values in ASCII you. So if I translate, Don't Panic to ASCII, I get the D = 44, o is 6F. We're going to learn about hexadecimal numbers in another couple modules here, so don't stress too much if these numbers look goofy because they have letters in them. We're going to talk about exactly why that is and a little bit. Just know that the numbers that I'm showing you here are actually numbers and not some other goofy language. So D is 44, o is 6F, n is 6e, the apostrophe is 27, t is 74, and so on, and when we put that all together we get this string of numbers that represents Don't Panic, including the space in there. In IBM‑land, they used a completely different number system in order to encode each key of the keyboard. So each keystroke that meant Don't Panic got encoded differently. And EBCDIC, E‑B‑C‑D‑I‑C, which stands for Extended Binary Coded Decimal Interchange Code, is IBM's version. It was their proprietary version. And in order for a system that used ASCII to communicate with a system that used EBCDIC, we needed some layer of the OSI model to translate from one system to the other, and that's what we intended to do with the presentation layer. Now that has all become quite antiquated, and we really don't do much with this anymore. You may find in textbooks that they're going to say, oh, JPEG and MPEG and whatnot happen at the presentation layer, and that might be the case. But really, those are outside of the OSI model, and we're ultimately going to be using application layer protocols in order to transfer information, and we really don't worry too much about the presentation layer. The session layer is another layer. I personally don't concern myself with the session layer too much. There are some protocols that do operate at the session layer. However, for networking purposes, we don't stress too much about classifying something as a session layer protocol. Ultimately, we consider it to be part of the application layer.
+
+From this help me to undserstand whole concept
+Copilot said:
+Copilot
+Here’s a clear, structured explanation of the OSI model based on what you shared:
+
+What is the OSI Model?
+The Open Systems Interconnection (OSI) model is a conceptual framework developed in the 1970s to standardize how different networking systems communicate. It breaks down network communication into seven layers, each with specific roles. This helps us understand where protocols and technologies fit in the process of sending and receiving data.
+
+Why Do We Need It?
+Networking involves many protocols and devices.
+The OSI model organizes these into layers so we know:
+What each protocol does
+The order in which data flows
+Think of it like the steps in a phone call: dialing, ringing, answering, talking. Each step has rules.
+The Seven Layers Explained
+Here’s a simple breakdown:
+
+1. Physical Layer
+What it does: Deals with the actual hardware and transmission of raw bits.
+Examples: Cables (Ethernet, fiber optics, coax), wireless signals.
+Key point: It’s about the physical medium—no intelligence, just transmission.
+2. Data Link Layer
+What it does: Provides rules for sending data between devices on the same network.
+Examples: Ethernet, DOCSIS.
+Key point: Adds structure to raw bits so devices can talk locally.
+3. Network Layer
+What it does: Handles addressing and routing so data can travel across networks.
+Examples: IP (Internet Protocol).
+Key point: Enables communication beyond local networks (e.g., your PC to a remote server).
+4. Transport Layer
+What it does: Ensures reliable delivery and sets up sessions.
+Examples: TCP (Transmission Control Protocol).
+Key point: Like dialing and confirming a phone call—creates a connection before sending data.
+5. Session Layer
+What it does: Manages sessions between applications.
+Examples: Some protocols use it, but in modern networking, it’s often merged with application layer.
+Key point: Not heavily used today.
+6. Presentation Layer
+What it does: Translates data formats (e.g., encryption, compression).
+Examples: Historically used for ASCII vs EBCDIC conversions.
+Key point: Mostly obsolete; modern apps handle this.
+7. Application Layer
+What it does: Provides services for end-user applications.
+Examples: HTTP/HTTPS, FTP, SMTP.
+Key point: Where your browser, email client, etc., interact with the network.
+How It All Works Together
+When you type pluralsight.com in your browser:
+Application Layer: Browser uses HTTP to request the page.
+Transport Layer: TCP sets up a reliable session.
+Network Layer: IP finds the server’s address.
+Data Link Layer: Ethernet moves data between devices locally.
+Physical Layer: Cables/wireless transmit the bits.
+Each layer depends on the one below it.
+
+Quick Analogy
+Think of sending a letter:
+
+Physical: The envelope and postal truck.
+Data Link: Local post office rules.
+Network: Routing across cities.
+Transport: Ensuring delivery confirmation.
+Application: Writing the actual message.
+✅ Key Takeaways
+OSI model = 7 layers, each with a specific role.
+Physical → Data Link → Network → Transport → Session → Presentation → Application.
+Modern networking focuses heavily on layers 1–4 and 7.
+Would you like me to create a simple diagram of the OSI layers with examples for quick reference? Or should I summarize this into a short mnemonic to help you memorize the layers easily?
+
+
+
+
+
+
+
+
+You said:
+Give an simple and easy real tym example
+Copilot said:
+Copilot
+Here’s a simple real-time example of the OSI model in action:
+
+Example: Sending a WhatsApp Message
+Imagine you send “Hello!” to your friend on WhatsApp. Here’s how the OSI layers work behind the scenes:
+
+Layer 7 – Application
+You type “Hello!” in WhatsApp and hit send.
+WhatsApp uses an application protocol (like HTTPS) to prepare the message.
+Layer 6 – Presentation
+The text is converted into a format the system understands (e.g., UTF-8 encoding).
+If encryption is enabled, the message is encrypted here.
+Layer 5 – Session
+A session is established between your phone and WhatsApp’s server so both know the conversation belongs to you.
+Layer 4 – Transport
+TCP ensures the message is delivered reliably.
+It breaks the message into segments and numbers them so they arrive in order.
+Layer 3 – Network
+IP addresses are used to find the WhatsApp server on the internet.
+Your phone’s IP and the server’s IP are used for routing.
+Layer 2 – Data Link
+Your Wi-Fi or mobile network uses Ethernet or LTE protocols to send data frames locally.
+Layer 1 – Physical
+The actual bits (0s and 1s) travel through your phone’s radio waves or cables to the router, then to the internet.
+✅ Result: Your friend receives “Hello!” on their phone because all layers worked together.
+
+Would you like me to create a colorful diagram showing this WhatsApp example mapped to all OSI layers? Or should I give you another real-world example like browsing a website or making a Zoom call?
+
+
+
+
+
+
+
+
+You said:
+Let's wrap up here what we've talked about. We've introduced the OSI model, we talked about the seven layers of it, we started by modeling that telephone call and thinking about how we had to vibrate the air and the entire process that needed to happen in order to make that phone call, as well as another idea of a protocol where we actually had to dial the phone, wait for it to ring, say hello before we could transfer messages between the two devices. And then we talked pretty in depth about all of the components of the OSI model and how they relate to networking. So remember, the OSI model gives us a very precise order of operations that we can work with. It gives us a space to categorize each protocol so that when we are working with networking, we understand which protocols are involved and why.
+
+in short in easy words say what it is
+Copilot said:
+Copilot
+In simple words:
+
+The OSI model is a guide that explains how data moves across a network in 7 steps (layers). Each layer has a specific job:
+
+Physical – Wires, cables, signals.
+Data Link – Local communication (Ethernet).
+Network – Addresses and routing (IP).
+Transport – Reliable delivery (TCP).
+Session – Manages conversations.
+Presentation – Translates data formats.
+Application – Where apps like browsers or WhatsApp work.
+It’s like a recipe for communication: every layer adds its part so your message can travel from your device to the destination correctly.
+
+✅ In short: OSI model organizes networking into layers so we know what happens, in what order, and which protocols do what.
+
+Do you want me to give you a one-line mnemonic to easily remember all 7 layers? Or a quick diagram for visual learning?
+
+
+
+
+
+
+
+
+You said:
+So, let's take a look at how this happens. So if we go to pluralsight.com on our workstation, we send that information out onto the internet, and then it transfers the website to our computer, and this all seems to happen magically, seamlessly, and typically very quickly. When we're actually doing this, though, what we're going to do is we're going to take that website, and this is our actual application layer information, in the case of going to a website, we're going to use a protocol called HTTP, or Hypertext Transfer Protocol. Websites are written in a language called HTML, or Hypertext Markup Language, and we use Hypertext Transfer Protocol, HTTP, to transfer it. So this application layer protocol, HTTP, is what we're using the transfer it. When we are working with this, though, these websites tend to be quite large, so we need to be able to break up that website into smaller chunks so we can successfully get it to the client. We're going to find out at the end of this encapsulation process that some protocols, specifically Ethernet, has a maximum amount of data that we can transfer for each frame that we send. For each chunk of data that we send across the network, we have a maximum amount of data that we can send in each one. So, once we have this application layer, it's going to work in conjunction with the transport layer to take that data, break it into smaller pieces, and then add it to a header. So we're going to put a header on this data at the transport layer. The transport layer, since it's setting up a session between our client and our server, we're going to have specific information in there to allow that to happen. In this case, it's a source port, a destination port number, some flags, which is just some general information about what's happening in the transaction, a sequence number, an acknowledgement number, and those keep track of how much data has been sent and received. This is kind of like if you're sending a birthday card to your dad. You would fill out the birthday card, you put any information in the card that you want, much like our website here for pluralsight.com, there's lots of websites out there and this particular one is Pluralsight, so we can take any information we want and we take that card and we put it inside of an envelope and we seal it up, and then we write on the envelope the destination address, which is our dad's name and address, and then we put a return address on it, which is our name and address. So we're taking this information, we're putting it inside of an envelope. This particular envelope is the transport layer, and we call this envelope a segment. So any data that we have with a header at the transport layer, we call a segment. So a chunk of data with the transport layer header is a segment. This particular segment header, or transport layer header, is a TCP header, and we're going to learn more about TCP in another module in this course. For now, we just need to know that this information allows the client and the server to set up a session and keep track of what data has been sent and received. Now, that's just one component of this transaction. In order to know where we are sending this data, we need to tell it what the source and destination IP addresses are. So we need to know where on the internet or on a network the server and the client are. So we take our transport layer information, which is going to keep that session between our endpoints going, and then we send it down to the network layer, so we take our segment and it becomes the payload of our network layer, and then we add this header, we add the source IP, destination IP, a value called the TTL, or time to live, which tells it how far this packet can travel at a maximum distance, as well as some other information that we add into the network layer header to make this transaction work correctly. I don't go into too much detail on that because it's not important at this level of understanding of data networking. So now we have our segment inside of the payload of our network layer header. This is called a packet. So, any time we have some data that we're transferring with a network layer header, this is a packet. So it's a chunk of data with a network layer header. This particular one is an IP header, or Internet Protocol. Specifically, Internet Protocol version 4. And we're going to learn more about IP as we go throughout this course and throughout the series of courses that will help train you to get a better understanding of data networking. So our network layer header is going to allow us to know what two endpoints on the internet, or any network, we're going to send this information to. Now in order to get our packet to go from one device to the next, from our workstation to the switch, from the switch to the router, from the router to the cable modem, from the cable modem out to the internet, and all of the hops that go along the internet, we're going to need a data link layer header here. So we send our network layer packet down to the data link layer and we put it in a frame. Now a frame is just a chunk of data with a data link layer header. In this particular case, this is an Ethernet header, so this is going to be an Ethernet frame, and we'll often use the Ethernet frame when we're sending data from our workstation to the switch, from the switch to our router, from a router to the cable modem. However, once we get to the cable modem, we're going to use a different protocol there which requires a different frame. So what we'll end up doing is taking the packet out of the frame and putting it into a new frame, and this happens consistently throughout the transaction as removing the data across the internet. The packet will remain the same; the frame header will change as it goes from segment to segment to segment. Now in our frame, especially an Ethernet frame, remember earlier I said that there's a maximum amount of data that we can send in that? So here, our data is still intact here, that chunk of website that we're sending is still encapsulated inside of this frame. There's also a transport layer header, there's a network layer header, and then we have this Ethernet header. When we're working with this, especially Ethernet, the data part of this can have something called a maximum transmission unit for Ethernet, or MTU, and for Ethernet that's typically 1500 bytes. We can make that larger in some cases, but in most cases 1500 bytes is the maximum amount of payload, including the packet header, including the segment header that we can send using an Ethernet frame. So we have to break up the data into these smaller chunks to allow this to happen. And like I've mentioned, we can make that larger in some cases. Lots of times inside of a data center for specific applications, we will increase that MTU size, but for regular day‑to‑day use on our networks from our PCs, we rarely adjust that size. Once we have our frame constructed with the source MAC address, destination MAC address, and then layer 3 protocol that we're using, we can then take that frame, send it down to the physical layer. When we send it down to the physical layer, what's going to happen here is we're going to convert that into 1s and 0s, and then the 1s and 0s are converted into a signal. That signal could be a light signal that we send across fiber optics, it could be an electrical pulse that we send across a copper wire or it might be an electromagnetic signal that we send with wireless. So in order for us to get the website from Pluralsight over to our workstation, we have to send all that data up and down the OSI model in order to make all the hops that we need to make in order to get it from our server over to our workstation. And that involves taking our application layer information, putting it inside of a segment, taking the segment, putting it inside of a packet, taking the packet, putting it inside of a frame, and then sending it across the wire.
+Copilot said:
+Copilot
+Here’s a short and easy wrap-up of what you just described:
+
+What’s Happening When You Visit pluralsight.com?
+When you type pluralsight.com in your browser, the data goes through a process called encapsulation, moving down the OSI layers:
+
+Application Layer (HTTP)
+
+Your browser requests the website using HTTP.
+The website is written in HTML.
+Transport Layer (TCP)
+
+Breaks the website data into smaller chunks (segments).
+Adds info like source/destination ports and sequence numbers.
+Network Layer (IP)
+
+Adds source and destination IP addresses.
+Creates a packet so it knows where to go on the internet.
+Data Link Layer (Ethernet)
+
+Wraps the packet in a frame with MAC addresses for local delivery.
+Handles the maximum size (MTU ~1500 bytes).
+Physical Layer
+
+Converts everything into 1s and 0s and sends signals (electrical, light, or wireless).
+✅ In short:
+Your website data is wrapped in layers like envelopes:
+Data → Segment → Packet → Frame → Bits → Signal
+Each layer adds its own “address and instructions” so the data can travel from your PC to the server and back.
+
+Would you like me to draw a simple diagram showing this encapsulation process step-by-step? Or should I give you a real-world analogy (like sending a parcel through post) to make it even easier to visualize?
+
+
+
+
+
+
+
+
+You said:
+Can u polease give me an small story type like postyman delivery of letter kinfd of example
+Copilot said:
+Copilot
+Here’s a small story-style example using the postman analogy to explain encapsulation and OSI layers:
+
+Story: Sending a Birthday Card
+Imagine you want to send a birthday card to your dad who lives in another city.
+
+Step 1: Write the Message (Application Layer)
+You write “Happy Birthday!” on the card.
+This is like your browser creating the website data using HTTP.
+
+Step 2: Put It in an Envelope (Transport Layer)
+You put the card in an envelope and write:
+
+Dad’s Name (Destination Port)
+Your Name (Source Port)
+This ensures the post office knows who it’s from and who it’s for.
+This is like TCP adding ports and sequence numbers.
+Step 3: Add Address on the Envelope (Network Layer)
+You write the street address and city on the envelope.
+This is like adding IP addresses so the letter knows where to go.
+
+Step 4: Put It in a Bigger Bag (Data Link Layer)
+The postman puts your envelope in a mailbag with other letters.
+The bag has a local delivery tag (MAC address).
+This is like creating an Ethernet frame for local delivery.
+
+Step 5: Load It on a Truck (Physical Layer)
+Finally, the mailbag goes on a truck and travels on roads.
+This is like converting everything into signals (1s and 0s) and sending them through cables or wireless.
+
+✅ Result: Your dad gets the card because every step added the right information for delivery—just like data moving through OSI layers.
+
+Would you like me to make a colorful diagram of this “Postman Story” mapped to OSI layers for quick visual learning? Or should I give you another fun analogy like pizza delivery for OSI layers?
+
+
+
+
+
+
+
+
+You said:
+In this next module, we're going to look at protocols and port numbers for those protocols, and we're specifically looking at application layer protocols, and in our goals for this module, we're going to look at numerous application layer protocols. This can get a little bit tedious, but I have broken it up with a couple demos, and we're going to try to make it as interesting as possible. So we're going to start with data transfer protocols. Now almost everything in data networking is moving data from one device to another; however, there are some that meet this criteria more than others because we're actually moving a file that we're using as users versus doing some kind of network support or other utility. We're also going to look at authentication protocols, we're going to look at network service protocols too, things that help make our network run. We're going to look at network management protocols, stuff that we use as a network engineer to make sure the network is running smoothly. We're going to look at some audiovisual protocols, specifically the things that make our voiceover IP phone work. And then last, we're going to look at database protocols, specifically SQL Database protocols that we use in order to access database information. So if we take a look again at our OSI model, we're going to be looking at application layer protocols in this particular module; however, there is a transport layer component that we're also looking at, and that's going to be the port number. You may remember from the video on encapsulation and the OSI model that when we build the segment, we put in a source and destination port number, and this port number is going to be directly related to an application layer protocol.
+Copilot said:
+Copilot
+Here’s a quick and clear summary of what you’re about to learn in this next module:
+
+Focus of the Module
+We’re diving into Application Layer protocols (OSI Layer 7).
+These protocols define how applications communicate over the network.
+Each protocol is linked to a port number at the Transport Layer (Layer 4), which helps identify the service.
+What We’ll Cover
+Data Transfer Protocols
+
+Used to move files or data between devices.
+Examples: HTTP/HTTPS (Web), FTP (File Transfer), SMB (File Sharing).
+Authentication Protocols
+
+Verify identity and secure communication.
+Examples: Kerberos, LDAP.
+Network Service Protocols
+
+Help the network function properly.
+Examples: DNS (Domain Name System), DHCP (Dynamic IP assignment).
+Network Management Protocols
+
+Used by engineers to monitor and manage networks.
+Examples: SNMP (Simple Network Management Protocol).
+Audiovisual Protocols
+
+Enable voice and video communication.
+Examples: SIP (Session Initiation Protocol), RTP (Real-Time Transport Protocol).
+Database Protocols
+
+Access and manage databases.
+Example: SQL over TCP.
+Why Port Numbers Matter
+When data moves down to the Transport Layer, it gets a source and destination port number.
+These ports tell the system which application protocol the data belongs to.
+Example:
+HTTP → Port 80
+HTTPS → Port 443
+FTP → Port 21
+✅ In short:
+Application Layer protocols define what service is being used, and port numbers at the Transport Layer make sure the data reaches the right application.
+
+Would you like me to create a simple cheat sheet of common protocols and their port numbers for quick reference? Or a visual diagram mapping protocols to OSI layers and ports?
+
+
+
+
+
+
+
+
+You said:
+So let's take a look at these application layer protocols, starting with transferring data. Whenever we go on our workstation and we ask for a website like pluralsight.com, we are asking for an HTML document to be transferred from the server to our workstation. And in order to do this, we're going to be using one of two protocols, which are effectively the same thing, HTTP or HTTPS. This is hypertext transfer protocol or hypertext transfer protocol secure. And these protocols, what they do is they allow us to transfer an HTML document between a server and a client. Now at the application layer, layer 7, we call them by their names here, HTTP and HTTPS. But at the transport layer, they are associated with a specific port number. In the case of HTTP, it's port 80. And in the case of HTTPS, it is port 443. So port 80 and port 443, we typically associate with using web services. Now when we're using HTTPS on port 443, you will often hear engineers and people talk about using SSL, secure socket layer, or TLS, transport layer security. Now TLS and SSL sound very different. However, they are the same thing. You will read documents on the internet that claim that SSL works for function X, and TLS works for function Y. You may hear some fancy stories about how they're different and separate, but the reality is it is literally the same protocol. They just changed the name of it right around 2000. The late '90s, early 2000s, they changed the name from SSL to TLS. This is complicated and beyond the scope of this course. Just remember that SSL and TLS are the same thing, and we use transport layer security to provide the encryption when we're using HTTPS. Now not all of the files that we transfer when we're working with a data network are going to be HTML files via a website. Sometimes we have files on our workstation that need to get transferred to a server or to a network device, which means that we'd have some kind of file here that needs to get sent to the server. Or maybe there's some specific files that are not HTML files on a server that we need to access and download to our workstation. So when we're working with file transfer, we have several options. And these three options here, FTP, SFTP, and TFTP all kind of rely on the same general technology. So these are all called file transfer protocol of some kind. FTP, file transfer protocol. SFTP you can imagine is secure FTP. And TFTP, this is a little bit of an odd one here. This is trivial file transfer protocol. FTP operates on two separate port numbers, port 20 and 21. It is somewhat of a messy protocol, especially if we have to use it through a firewall. Secure FTP is FTP with encryption. It operates on port 22, which we're going to find out is the same exact port number for another utility that we use called SSH or Secure Shell. The reason that it's the same port number is that we're actually creating an SSH connection and then using FTP on top of it. But for now, you have to remember that SFTP uses port 22. And then TFTP reminds me of an old movie that I used to love when I was in high school in the early '90s. It was Bill and Ted's Excellent Adventure. And TFTP uses port 69, dude. So when we are working with these, TFTP is typically going to be used to transfer small files, and I have used TFTP most in my career to transfer an operating system file from my workstation that I use to manage the data network. Use that to transfer some operating system file or upgrade to a device, like a router or a switch, in order to have the file on that device so I can upgrade the device to the latest operating system. So FTP, SFTP, TFTP are all used to transfer files, and they all have generally the same type of operation. There is one more from Microsoft here called SMB, which stands for server message block. Now if you work in a large business and you have a shared drive, a shared network drive mounted on your workstation, typically we're using SMB as the protocol for this. And what it allows us to do is mount a drive on our Windows workstation or other workstations. And with SMB then, we can actually just browse that drive as if it were a local drive on our workstation, yet it is a network drive. And we can copy files from that drive to our workstation or copy files from our workstation up to that drive, and it's going to use server message block to transfer that file instead of these other FTP varieties.
+Copilot said:
+Copilot
+Here’s a short and clear summary of what you just learned about Application Layer protocols for data transfer:
+
+✅ Web Browsing
+HTTP → Port 80
+HTTPS → Port 443
+Uses SSL/TLS for encryption (same thing, just renamed).
+✅ File Transfer
+FTP (File Transfer Protocol) → Ports 20 & 21
+SFTP (Secure FTP) → Port 22 (runs over SSH)
+TFTP (Trivial FTP) → Port 69 (used for small files like OS upgrades)
+SMB (Server Message Block) → Used for Windows shared drives.
+Key Idea
+Application Layer protocol defines the service (HTTP, FTP, etc.).
+Transport Layer port number identifies that service (80, 443, etc.).
+Together, they make sure data reaches the right application.
+Would you like me to create a quick cheat sheet with all common protocols and their port numbers (including web, file transfer, email, DNS, etc.) for easy memorization? Or a visual diagram mapping these protocols to OSI layers and ports?
+
+
+
+
+
+
+
+
+You said:
+So let's do a demonstration on this then, and let's take a look at FTP and SMB in operation. So here I am on my Windows 10 workstation. I need to launch the File Explorer in order to demonstrate SMB. I have an icon here on my quick launch bar. We can also get to it by searching Windows here for File Explorer, and it'll show right up. Or I can click on the Start button here on the Windows icon, and it'll be this icon right here right above the Settings and Power button. We can click on that, and that'll also open File Explorer for us. Now in order to mount a drive here, in order to mount a network drive using SMB, what I need to do is right‑click on the Network icon here in File Explorer and click Map network drive. And what this will do is it'll give me a option here to choose the drive letter that I'm going to map to. Typically, network drives are mapped with a letter above A, B, C, D, E. The reason for that is old computers used to have an A drive, a B drive, and a C drive, maybe a D drive for a CD ROM. The A and B drives were floppy drives. So for our purposes, I'm going to choose the P drive, and next we choose the folder that we want to mount. So it gives us an example there, and it says example, we put backslash backslash, the name of the server. My server name is bluebox. I'm a big Doctor Who fan, so I called mine bluebox just like the TARDIS. And then we put in the name of the folder that we are wanting to mount, and that is called SMBdemo in my case. So we click Finish here, and what'll happen now is it's going to say, hey, we need to enter some credentials. So it'll usually try just the credentials that are local to the workstation first. And if those don't work, in this case it failed, and now I can put in my user name, which is bagurdes, and my password and hit OK here, and it should mount my drive. And there we go, SMBdemo on bluebox, and we can see I have a couple images in here, some PNG files, and this is just my purple switch, which is right here. And we also have a router, my router icon, which is in blue here. So, this is how I access these files on my SMB drive. I can copy these files out of here onto my desktop, and I should be able to copy a file into here. Let's see if I have a document that I can put in there. I have this sslkeylog document. So what I can do is I can copy that document by right‑clicking, selecting copy, going over to bluebox, and then pasting it in here. And now, I have moved the file from my workstation to my shared drive. So that's SMB in operation. I can then unmount that drive if I want to by clicking Disconnect here. And now when I reopen File Explorer, it is no longer mounted. Second thing, we can check out FTP. So to get FTP to work, I downloaded an application called FileZilla, and you can download this. Just do a Google search for FileZilla. It's a part of the Mozilla project, which makes Firefox. So this is a part of the Firefox suite of applications. So here, this is an FTP client. And what I'm looking at on this screen is up on the top here, I have an option to put in the host name of my FTP server along with a username, password, and port number and then a Quickconnect button. And then over on the left‑hand side here, I have a list of all the folders and files on my local workstation. All right, so this is my PC over here on the left side of the screen. On the right side of the screen, this is the remote side. So I haven't connected yet, so let's do that. My FTP server name is bluebox. Let's move the mouse so we can see that. So my host name, my FTP server is bluebox. The username is bagurdes. My password, I'm not telling you. And I don't need to fill in the port number because it's just going to use the default port. And then I hit Quickconnect. And it's going to pop up with a message here because in modern networking, when we're transferring files, we want to avoid using unencrypted connections because when we use an unencrypted connection, it means anybody on the network listening can download that same file and use it for whatever purposes they want, and I may not even be aware that they stole it. So this is just giving us a warning. Since this is a demo in my local environment with data that's not important, it's just these images, I'm not going to worry about that for this particular case. So I hit OK. And then it pops up with a listing of all of the folders I have access to on my FTP server. So here, one of those folders is the SMBdemo. I create a specific folder just for SMB. So if I open that up, we can see that here's that file that I just put into that folder, that sslkeylog file. All right, I also have the FTPdemo, which has my router and switch in it. So what I can do now is I can just do some dragging and dropping. So maybe I want to move the switch into my documents folder. So what I can do is I can just drag the switch‑purple over to Documents. And now if I open up File Explorer and look in Documents, we'll see that there is now a purple switch in there. I can do the same thing in the other direction. If I want to go to Documents and take that sslkeylog file that I put into the other folder before, drag it over to my FTPdemo folder, now the sslkeylog file is in that folder as well. So this is how FTP works. I know this is a very basic demonstration. But what we're looking at here is that FTP allows us to move files from one device to another, as does SMB. It's really just the interface that's different. You can also use FTP over the command line. That's a little more sophisticated. However, it basically is doing the same exact thing here of moving files from one device to another using this protocol called FTP or SMB.
+Copilot said:
+Copilot
+Here’s a short, story-style wrap-up of your demo using the postman analogy:
+
+SMB – Like Mounting a Shared Locker
+Imagine you work in an office with a shared locker for files:
+
+You map the locker to your desk (Map Network Drive in File Explorer).
+You can open it like a local drawer, copy files in and out.
+SMB is the protocol that makes this possible, so your PC treats a remote folder like it’s right there.
+FTP – Like Sending Files via a Courier
+Now, think of FTP as hiring a courier:
+
+You open FileZilla, enter the server address, username, and password.
+The courier (FTP client) connects to the warehouse (FTP server).
+You drag and drop files between your PC and the server—just like handing packages to the courier.
+Warning: If you don’t use encryption (SFTP), it’s like sending packages without sealing them—anyone can peek inside.
+✅ Key Difference:
+
+SMB = Mounted drive, feels local.
+FTP = Remote transfer, feels like shipping files.
+Would you like me to create a quick visual cheat sheet comparing SMB vs FTP vs SFTP vs TFTP with their ports and use cases? Or a fun infographic showing both as delivery methods (locker vs courier)?
+
+
+
+
+
+
+
+
+You said:
+SMB – Like Mounting a Shared Locker
+Imagine you work in an office with a shared locker for files:
+
+You map the locker to your desk (Map Network Drive in File Explorer).
+You can open it like a local drawer, copy files in and out.
+SMB is the protocol that makes this possible, so your PC treats a remote folder like it’s right there.explain again in more easiest way
+Copilot said:
+Copilot
+Here’s an even simpler way to explain SMB:
+
+Think of SMB like a Shared Folder on Your Computer
+Your company has a big storage cabinet (server) where everyone keeps files.
+You connect that cabinet to your desk using “Map Network Drive” in Windows.
+After mapping, the cabinet looks like just another drive on your computer (like C: or D:).
+You can open it, copy files in, or take files out—just like a local folder.
+SMB is the “magic” that makes this possible.
+✅ In short: SMB lets you use a folder on another computer as if it’s on your own PC.
+
+Would you like me to also explain FTP in the same super-simple way for comparison? Or create a quick visual showing SMB vs FTP in one glance?
+
+
+
+
+
+
+
+
+You said:
+The next application layer protocols we're going to take a look at here are email. So email is a way of transferring a file from a server to a client again. We're just using a different format this time, and we're using an email format. There are three methods that we're going to need in order to transfer email. We have POP3, we have IMAP, and we have SMTP. POP3 is Post Office Protocol version 3, IMAP is Internet Message Access Protocol, and SMTP is Simple Mail Transfer Protocol. POP3 And IMAP are typically reserved for retrieving mail from a server to the client. And SMTP is used to send mail from a client to the server. So when we're configuring email clients, usually we need to configure either POP or IMAP, as well as SMTP. Now these protocols are still used today, and they're common. However, the way we configure them has changed pretty drastically over the last 10 years. Mail services like Gmail, Outlook, Yahoo Mail, and others have changed the way we configure our devices for email. A lot of times, we just say that we're using Google, we put in our username and password, and it automatically configures all the protocols for us versus what I may have had to do in 1999. I would have to actually go in and configure all the details of my email system, configuring the correct POP3 server, the correct port number, the correct SMTP server and its correct port number, as well as my credentials. So time has changed on how we configure and use this, but we still need to know that POP3, IMAP, and SMTP are used for email. Now all three of these have two transport layer port numbers they can use. And if you've seen a theme so far here, we've been talking about unencrypted and encrypted transfer of messages. So POP3 here for the unencrypted POP3, it's port 110. Encrypted is port 995. For IMAP, we have unencrypted on port 143 and encrypted on port 993. And then for SMTP, we have port 25 for unencrypted and port 465 for encrypted. Now we typically can't just change the port number in our system to make it encrypted. We actually have to have that protocol installed and enabled on our devices, which, in most modern mail clients, these protocols are enabled and we can use them.
+Copilot said:
+Copilot
+Here’s a simple summary of email protocols and their ports:
+
+✅ Email Protocols
+POP3 (Post Office Protocol v3)
+
+Purpose: Download emails from server to client.
+Ports:
+Unencrypted → 110
+Encrypted → 995
+IMAP (Internet Message Access Protocol)
+
+Purpose: Access emails on the server without downloading all.
+Ports:
+Unencrypted → 143
+Encrypted → 993
+SMTP (Simple Mail Transfer Protocol)
+
+Purpose: Send emails from client to server.
+Ports:
+Unencrypted → 25
+Encrypted → 465
+✅ Key Idea:
+
+POP3 & IMAP = Receive mail
+SMTP = Send mail
+Each has two ports: one for normal, one for secure (SSL/TLS).
+Would you like me to create a quick cheat sheet with ALL common protocols (Web, File Transfer, Email, DNS, etc.) and their port numbers for easy memorization? Or a colorful diagram mapping these email protocols to OSI layers and ports?
+
+
+
+
+
+
+
+
+You said:
+Let's talk about authentication. Now when we talk about authentication, usually we're talking about authentication of a client to a server. When we're using LDAP, oftentimes we have a workstation, especially in a corporate office, where we have to use a username and password to log into that client. And what some authentication services can do is instead of having those credentials stored locally on your workstation, like you might have with your home computer, the credentials are actually stored on a server inside of the organization's data center. And that way it doesn't matter what workstation you log onto in the workstation, your settings and desktop and mapped drives and whatnot will all show up the same on your client workstation, regardless of which one you're using. There's two protocols that we use for this. It's Lightweight Directory Access Protocol. One is not encrypted; one is with the S and it's encrypted. So what this is is we put in a username and password on the client, we send it to the server, and the server will then send a token back saying yes, this user is authenticated. And then after that, the server may send additional information that has user settings and whatnot for the client. So here for LDAP, we're going to use port 389. For LDAP secure or LDAPs, we're going to use port 636 at the transport layer. Next, we're going to talk about a series of network protocols that we use for network services. The first one here is called Dynamic Host Configuration Protocol, or DHCP. Now DHCP is responsible for giving your workstation an IP address when it first is plugged into the network. Now IP addresses we're going to learn about in another couple modules. IP addresses are and identifier for your device on the network. It's one of the identifiers for your device on the network, and it operates at the network layer. Now the IP address, it has very specific properties, and it has to meet very specific criteria in order for your client to be able to communicate with the rest of the network or the internet. So instead of having users configure this or configure them manually, we oftentimes will use a DHCP server to do this. As a matter of fact, this is the case in your home network. Your cable modem or your cable modem router or your wireless access point, all those devices have capabilities to offer a DHCP server. That way, when you turn on your device and you connect it to the wireless network or you plug your device into the wired network, it automatically gets an IP address. So here what'll happen is when we plug the client into the network, we're going to send out a discover message. This DHCP server then is going to reply with something called an offer message. And the offer message is going to have the IP address, a subnet mask, the default gateway, DNS server, possibly some other information as well. And then what'll happen is the client will respond back and say, yes, I accept that, and then the server will respond back and say great. I acknowledge that. I've added it to my database. So here, DHCP is going to use port numbers 67 and 68 in order to operate on a network.
+Copilot said:
+Copilot
+
+Reasoned for 9s
+
+Performing search queries
+
+Searching
+
+Proceeding with explanation
+Awesome—let’s make authentication (LDAP/LDAPS) and DHCP super easy to grasp with quick analogies, plus the ports you’ll see in the real world.
+
+🔐 Authentication (LDAP / LDAPS)
+The idea (in simplest words)
+Think of your company having a central “ID office” (the directory server).
+When you log into any PC, the PC asks that ID office:
+“Is Rishav Panda allowed in? What are his settings?”
+The ID office replies: “Yes, here’s a token + his profile”.
+Protocols & ports
+LDAP (unencrypted lookup) → Port 389
+LDAPS (LDAP over TLS—encrypted) → Port 636
+Remember: LDAPS = same directory service, but with a secure tunnel so usernames/passwords aren’t visible on the wire.
+
+🧭 Network Services: DHCP (Getting an IP Automatically)
+The idea (in simplest words)
+When a device joins the network, it doesn’t know its address.
+It shouts: “Anyone out there who can give me an IP?” (Discover)
+The DHCP server answers: “Here’s an offer: IP + subnet mask + gateway + DNS.”
+Your device says “I’ll take it” (Request).
+Server confirms “Done, it’s yours” (ACK).
+DHCP messages & ports
+Uses UDP (because it’s simple and fast).
+Server listens on 67, client uses 68.
+⚡ Why this matters for you (quick cheat sheet)
+LDAP (389) – directory lookups; use LDAPS (636) whenever possible for security.
+DHCP (UDP 67/68) – automatic IP/lease info (IP, mask, gateway, DNS) so you don’t configure manually.
+🧩 One-liners to remember
+LDAP = ask the company phonebook; LDAPS = ask it securely.
+DHCP = “auto-address assignment” handshake (Discover → Offer → Request → ACK).
+If you want, I can generate a one-page PDF cheat sheet with:
+
+Common auth and network service protocols (LDAP/LDAPS, Kerberos, RADIUS, TACACS+),
+Their default ports, and
+A tiny diagram of the DHCP DORA flow (Discover–Offer–Request–ACK).
+Sources
+
+
+
+
+
+
+
+You said:
+Let's talk about authentication. Now when we talk about authentication, usually we're talking about authentication of a client to a server. When we're using LDAP, oftentimes we have a workstation, especially in a corporate office, where we have to use a username and password to log into that client. And what some authentication services can do is instead of having those credentials stored locally on your workstation, like you might have with your home computer, the credentials are actually stored on a server inside of the organization's data center. And that way it doesn't matter what workstation you log onto in the workstation, your settings and desktop and mapped drives and whatnot will all show up the same on your client workstation, regardless of which one you're using. There's two protocols that we use for this. It's Lightweight Directory Access Protocol. One is not encrypted; one is with the S and it's encrypted. So what this is is we put in a username and password on the client, we send it to the server, and the server will then send a token back saying yes, this user is authenticated. And then after that, the server may send additional information that has user settings and whatnot for the client. So here for LDAP, we're going to use port 389. For LDAP secure or LDAPs, we're going to use port 636 at the transport layer. Next, we're going to talk about a series of network protocols that we use for network services. The first one here is called Dynamic Host Configuration Protocol, or DHCP. Now DHCP is responsible for giving your workstation an IP address when it first is plugged into the network. Now IP addresses we're going to learn about in another couple modules. IP addresses are and identifier for your device on the network. It's one of the identifiers for your device on the network, and it operates at the network layer. Now the IP address, it has very specific properties, and it has to meet very specific criteria in order for your client to be able to communicate with the rest of the network or the internet. So instead of having users configure this or configure them manually, we oftentimes will use a DHCP server to do this. As a matter of fact, this is the case in your home network. Your cable modem or your cable modem router or your wireless access point, all those devices have capabilities to offer a DHCP server. That way, when you turn on your device and you connect it to the wireless network or you plug your device into the wired network, it automatically gets an IP address. So here what'll happen is when we plug the client into the network, we're going to send out a discover message. This DHCP server then is going to reply with something called an offer message. And the offer message is going to have the IP address, a subnet mask, the default gateway, DNS server, possibly some other information as well. And then what'll happen is the client will respond back and say, yes, I accept that, and then the server will respond back and say great. I acknowledge that. I've added it to my database. So here, DHCP is going to use port numbers 67 and 68 in order to operate on a network.
+
+explain in with real tym example
+Copilot said:
+Copilot
+Here’s a real-time example to make LDAP and DHCP super easy to understand:
+
+✅ LDAP Authentication – Logging into Office PC
+Imagine you walk into your company office and sit at any workstation:
+
+You type your username and password.
+The PC doesn’t check locally; instead, it asks the company directory server:
+“Is Rishav Panda allowed to log in?”
+
+The server checks its database and replies:
+“Yes, authenticated! Here’s your profile and settings.”
+
+Result: Your desktop, mapped drives, and shortcuts appear exactly the same on any PC.
+Ports used:
+LDAP → 389 (unencrypted)
+LDAPS → 636 (secure)
+✅ DHCP – Connecting Your Laptop to Wi-Fi
+You bring your laptop to the office and connect to Wi-Fi:
+
+Your laptop says:
+“I need an IP address!” (Discover)
+
+The DHCP server replies:
+“Here’s an offer: IP = 192.168.1.50, Subnet = 255.255.255.0, Gateway = 192.168.1.1, DNS = 8.8.8.8.”
+
+Your laptop responds:
+“I accept!” (Request)
+
+Server confirms:
+“Done, you’re registered.” (ACK)
+
+Now you can browse the internet without manually setting IP.
+Ports used:
+DHCP uses UDP 67 (server) and UDP 68 (client).
+✅ In short:
+
+LDAP = Central login system for consistent user experience.
+DHCP = Automatic IP assignment so you can connect easily.
